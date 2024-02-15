@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анимированный Переливающийся Фон</title>
+<!-- Подключение Font Awesome для иконок -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .animated-background {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #6e8efb, #a777e3, #ec77ab, #eaafc8);
+    background-size: 600% 600%;
+    animation: Gradient 15s ease infinite;
+  }
+  @keyframes Gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  .dock {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  .dock i {
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  .dock i:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .apps-section {
+    position: absolute;
+    top: 100px; /* Расстояние от верха страницы */
+    width: 100%;
+    text-align: center;
+  }
+  .app-link {
+    color: white; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    display: inline-block;
+    margin: 10px;
+  }
+  .app-link img {
+    width: 50px; /* Размер иконки приложения */
+    height: 50px;
+    display: block;
+    margin: 0 auto 10px; /* Отступы вокруг иконки */
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="animated-background"></div>
+<div class="dock">
+  <i class="fab fa-app-store-ios"></i>
+  <i class="fas fa-cog"></i>
+  <i class="fas fa-user"></i>
+</div>
+<div class="apps-section">
+  <h2 style="color: white;">Jailbreak Apps</h2>
+  <a href="apple-magnifier://install?url=https://github.com/mineek/Serotonin/releases/download/1.2.1/Serotonin.tipa" class="app-link">
+    <img src="serota.png" alt="Serotonin">
+    Serotonin
+  </a>
+  <a href="apple-magnifier://install?url=https://github.com/roothide/Bootstrap/releases/download/1.2.1/Bootstrap.tipa" class="app-link">
+    <img src="btrst.png" alt="BootStrap">
+    BootStrap
+  </a>
+  <a href="apple-magnifier://install?url=https://github.com/straight-tamago/misaka/releases/download/8.2.4/misaka-v8.2.4.ipa" class="app-link">
+    <img src="hel.png" alt="Helium">
+    Helium
+  </a>
+  <a href="apple-magnifier://install?url=https://github.com/straight-tamago/misaka/releases/download/8.2.4/misaka-v8.2.4.ipa" class="app-link">
+    <img src="miska.png" alt="Misaka">
+    Misaka
+  </a>
+</div>
+</body>
+</html>
